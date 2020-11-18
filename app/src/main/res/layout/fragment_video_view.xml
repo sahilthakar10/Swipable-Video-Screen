@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:id="@+id/videoController"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/video_description"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_view_options"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp" />
+
+
+    <TextView
+        android:id="@+id/video_description"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:ellipsize="end"
+        android:lines="5"
+        android:maxLines="5"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_view_options"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"/>
+
+    <ImageView
+        android:id="@+id/image_view_music_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:srcCompat="@drawable/ic_music_track_icon"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_view_options"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/image_view_music_icon"
+        app:layout_constraintWidth_percent=".4"
+        android:layout_marginBottom="5dp"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/recycler_view_options"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".95"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <ImageView
+            android:id="@+id/container_profile"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:padding="5dp"
+            android:background="@drawable/add_button_background"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toTopOf="@+id/image_view_option_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.varunest.sparkbutton.SparkButton
+            android:id="@+id/image_view_option_like"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_profile"
+            app:sparkbutton_activeImage="@drawable/ic_fav_red"
+            app:sparkbutton_iconSize="@dimen/fav_icon"
+            app:sparkbutton_inActiveImage="@drawable/ic_heart_icon"
+            app:sparkbutton_primaryColor="@color/fav_color_active_primary"
+            app:sparkbutton_secondaryColor="@color/fav_color_active_secondary" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/colorMediaOptions"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/image_view_option_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_option_like"
+            android:text="100" />
+
+        <ImageView
+            android:id="@+id/image_view_option_comment"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/like_count"
+            app:srcCompat="@drawable/ic_baseline_comment_24" />
+
+        <TextView
+            android:id="@+id/comment_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="@color/colorMediaOptions"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/image_view_option_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_option_comment"
+            android:text="300" />
+
+        <ImageView
+            android:id="@+id/image_view_option_share"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment_count"
+            app:srcCompat="@drawable/ic_baseline_share_24" />
+
+        <TextView
+            android:id="@+id/image_view_option_share_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="Share"
+            android:textColor="@color/colorMediaOptions"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view_option_share" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
