@@ -134,7 +134,8 @@ class VideoViewFragment: Fragment(R.layout.fragment_video_view) {
 
     private fun pauseVideo() {
         player?.playWhenReady = false
-    }
+        player?.seekTo(0)
+	}
 
     override fun onResume() {
         videoRestart()
