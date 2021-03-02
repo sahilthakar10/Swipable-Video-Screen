@@ -1,13 +1,8 @@
 # TikTok
 
-Tools:-
-
-    //Exoplayer
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.8.3'
-    implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.3'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.8.3'
-
-    // For DASH
+### Tools:-
+* Exoplayer
+* For DASH
     implementation 'com.google.android.exoplayer:exoplayer-dash:2.8.3'
     // For SmoothStreaming
     implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.8.3'
